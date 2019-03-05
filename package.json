@@ -1,0 +1,62 @@
+{
+  "name": "sead",
+  "version": "0.5.4",
+  "description": "Wordpress Custom Theme Built and Designed for SEAD Website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test",
+    "browsersync": "gulp browsersync",
+    "build": "gulp build",
+    "eslint": "gulp eslint",
+    "imagemin": "gulp imagemin",
+    "sass": "gulp sass",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ghttps://github.com/wp-sead/sead.git"
+  },
+  "keywords": [
+    "WordPress",
+    "gulp",
+    "Sass",
+    "Autoprefixer",
+    "Bourbon",
+    "Neat",
+    "Bitters",
+    "imagemin",
+    "Browsersync",
+    "Webpack"
+  ],
+  "author": "Kite",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/wp-sead/sead/issues"
+  },
+  "homepage": "https://github.com/wp-sead/sead",
+  "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.6",
+    "eslint-config-google": "^0.9.1",
+    "eslint-loader": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0",
+    "imagemin-pngquant": "^6.0.0",
+    "natives": "^1.1.6",
+    "require-dir": "^1.0.0",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^4.16.1",
+    "webpack-stream": "^5.0.0",
+    "yargs": "^12.0.1"
+  }
+}
