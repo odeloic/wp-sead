@@ -9,7 +9,9 @@ module.exports = {
     // Insert custom rules here
     // For more rules, see here: http://eslint.org/docs/rules/
     'no-var': 'warn',
-    'require-jsdoc': 'off'
+    'require-jsdoc': 'off',
+    'no-unused-vars': 'off',
+    'space-before-function-paren': 'off'
   },
   'parserOptions': {
     'sourceType': 'module'
