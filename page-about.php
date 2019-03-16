@@ -11,6 +11,9 @@ get_template_part( 'templates/page-header' );
                 <?php $args = array(
                   'post_type' => 'sead_activity',
                   'posts_per_page' => '-1',
+                  'meta_key'          => 'sead_activity_order',
+                  'orderby' => 'meta_value_num',
+                  'order'           => 'asc',
                 );
 
                 $sead_core_activities = new WP_Query($args);
@@ -116,6 +119,29 @@ get_template_part( 'templates/page-header' );
         </div>
 
 
+    </div>
+  </div>
+</section>
+
+
+<section class="section section--padded section-team pd-top--big pd-bottom--big">
+  <div class="container--tight">
+    <div class="text--centered">
+        <h2 class="heading--primary heading--green mg-bottom--medium">Team</h2>
+    </div>
+
+    <div class="team-box">
+      <?php $args = array(
+        'post_type' => 'team_member',
+        'posts_per_page' => '-1'
+        );
+
+        $team_members = new WP_Query($args);
+
+        if ($team_members->have_posts()) : while($team_members->have_posts()) : $team_members->the_post();
+          get_template_part( 'templates/team-member');
+        endwhile; endif; wp_reset_postdata();
+      ?>
     </div>
   </div>
 </section>
