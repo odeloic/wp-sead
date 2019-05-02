@@ -6,6 +6,7 @@
 @import '../../node_modules/bulma/sass/grid/columns.sass';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 @import './components/swiper';
 @import './components/reset';
 @import './components/base';
@@ -13,7 +14,7 @@
 @import './components/links';
 @import './components/buttons';
 @import './components/layout';
-@import './components/header';     
+@import './components/header';
 @import './components/navigation';
 @import './components/footer';
 @import './components/slider';
@@ -33,3 +34,11 @@
 @import './components/blog';
 @import './components/blog-content';
 @import './components/helpers';
+@import './components/filter-form';
+@import './components/resource';
+@import './components/contact-form';
+@import './components/menu-icon';
+@import './components/mobile-navigation';
+@import './components/social-icons';
+@import './components/search-form';
+@import './components/tr-material';

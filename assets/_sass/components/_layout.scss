@@ -11,6 +11,8 @@
     }
 
 
+
+
     &--activities {
         padding-bottom: 20rem;
 
@@ -32,10 +34,7 @@
         padding-right: 3rem;
     }
 
-    @include respond(small) {
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
+    @include respond(small) {}
 }
 
 .container--tight {
@@ -58,6 +57,7 @@
     padding: 4rem 4rem 4rem 14rem;
 
     @include respond(medium) {
-        padding: 4rem 4rem 4rem 8rem;
+        padding-right: 5rem;
+        padding-left: 5rem;
     }
 }

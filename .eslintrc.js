@@ -11,7 +11,14 @@ module.exports = {
     'no-var': 'warn',
     'require-jsdoc': 'off',
     'no-unused-vars': 'off',
-    'space-before-function-paren': 'off'
+    'space-before-function-paren': 'off',
+    'no-trailing-spaces': 'off',
+    'quotes': 'off',
+    'comma-dangle': 'off',
+    'no-var': 'off',
+    'no-invalid-this': 'off',
+    'one-var': 'off',
+    'no-undef': 'off'
   },
   'parserOptions': {
     'sourceType': 'module'

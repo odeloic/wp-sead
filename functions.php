@@ -98,3 +98,119 @@ function add_file_types_to_uploads($file_types) {
   return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
+
+
+function sead_register_query_vars( $vars ) {
+  $vars[] = 'resource_activity';
+  $vars[] = 'resource_category';
+
+  return $vars;
+}
+
+add_filter('query_vars', 'sead_register_query_vars');
+
+
+
+/**
+ * Build a custom query based on several conditions
+ * The pre_get_posts action gives developers access to the $query object by reference
+ * any changes you make to $query are made directly to the original object - no return value is requested
+ *
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+ *
+ */
+function sead_pre_get_posts( $query ) {
+    // check if the user is requesting an admin page
+    // or current query is not the main query
+    if ( is_admin() || ! $query->is_main_query() ){
+        return;
+    }
+
+    // edit the query only when post type is 'resource'
+    // if it isn't, return
+    if ( !is_post_type_archive( 'resource' ) ){
+        return;
+    }
+
+    $meta_query = array();
+
+    // add meta_query elements
+    if( !empty( get_query_var( 'resource_activity' ) ) ){
+        $meta_query[] = array( 'key' => 'resource_activity', 'value' => get_query_var( 'resource_activity' ), 'compare' => 'LIKE' );
+    }
+
+    // if( !empty( get_query_var( 'resource_category' ) ) ){
+    //     $meta_query[] = array( 'key' => '_sm_accommodation_type', 'value' => get_query_var( 'type' ), 'compare' => 'LIKE' );
+    // }
+
+    if( count( $meta_query ) > 1 ){
+        $meta_query['relation'] = 'AND';
+    }
+
+    if( count( $meta_query ) > 0 ){
+        $query->set( 'meta_query', $meta_query );
+    }
+}
+add_action( 'pre_get_posts', 'sead_pre_get_posts', 1 );
+
+
+function sead_search_form( $args ) {
+    // The Query
+  // meta_query expects nested arrays even if you only have one query
+  $query = new WP_Query( array( 'post_type' => 'resource', 'posts_per_page' => '-1', 'meta_query' => array( array( 'key' => 'resource_activity' ) ) ) );
+
+  // The Loop
+  if ( $query->have_posts() ) {
+      $activities = array();
+      while ( $query->have_posts() ) {
+          $query->the_post();
+          $activity = get_post_meta( get_the_ID(), 'resource_activity', true );
+          $activity = get_the_title( $activity );
+          // populate an array of all occurrences (non duplicated)
+          if( !in_array( $activity, $activities ) ){
+              $activities[] = $activity;
+          }
+      }
+  }
+   else{
+         echo 'No activity yet!';
+         return;
+  }
+
+  /* Restore original Post Data */
+  wp_reset_postdata();
+
+  if( count($activities) == 0){
+      return;
+  }
+
+  asort($activities);
+
+  $select_activity = '<select name="resource_activity" style="width: 100%">';
+  $select_activity .= '<option value="" selected="selected">' . __( 'Select Activity', 'sead' ) . '</option>';
+  foreach ($activities as $activity ) {
+      $select_activity .= '<option value="' . $activity . '">' . $activity . '</option>';
+  }
+  $select_activity .= '</select>' . "\n";
+
+  reset($activities);
+
+  $output = '<form action="' . esc_url( get_permalink() ) . '" method="GET" role="search">';
+  $output .= '<div class="smselectbox">' .  $select_activity  . '</div>';
+  $output .= '<input type="hidden" name="post_type" value="resource" />';
+  $output .= '<p><input type="submit" value="Go!" class="button" /></p></form>';
+
+return $output;
+
+}
+
+
+function sead_exclude_posts( $wp_query) {
+  $excluded = array('press');
+
+  if( is_home() ) {
+    set_query_var( 'category__not_in', $excluded );
+  }
+}
+
+add_action( 'pre_get_posts', 'sead_exclude_posts' );

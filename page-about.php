@@ -39,6 +39,29 @@ get_template_part( 'templates/page-header' );
 </section>
 
 
+<section class="section section--padded section-team pd-top--big pd-bottom--big">
+  <div class="container--tight">
+    <div class="text--centered">
+        <h2 class="heading--primary heading--green mg-bottom--medium">Team</h2>
+    </div>
+
+    <div class="team-box">
+      <?php $args = array(
+        'post_type' => 'team_member',
+        'posts_per_page' => '-1'
+        );
+
+        $team_members = new WP_Query($args);
+
+        if ($team_members->have_posts()) : while($team_members->have_posts()) : $team_members->the_post();
+          get_template_part( 'templates/team-member');
+        endwhile; endif; wp_reset_postdata();
+      ?>
+    </div>
+  </div>
+</section>
+
+
 <section class="section section-intro-video pd-top--big pd-bottom--big">
   <div class="container">
       <div class="columns">
@@ -63,6 +86,9 @@ get_template_part( 'templates/page-header' );
       </div>
   </div>
 </section>
+
+
+
 
 
 <!-- section -intro -video -->
@@ -124,26 +150,6 @@ get_template_part( 'templates/page-header' );
 </section>
 
 
-<section class="section section--padded section-team pd-top--big pd-bottom--big">
-  <div class="container--tight">
-    <div class="text--centered">
-        <h2 class="heading--primary heading--green mg-bottom--medium">Team</h2>
-    </div>
 
-    <div class="team-box">
-      <?php $args = array(
-        'post_type' => 'team_member',
-        'posts_per_page' => '-1'
-        );
-
-        $team_members = new WP_Query($args);
-
-        if ($team_members->have_posts()) : while($team_members->have_posts()) : $team_members->the_post();
-          get_template_part( 'templates/team-member');
-        endwhile; endif; wp_reset_postdata();
-      ?>
-    </div>
-  </div>
-</section>
 
 <?php get_footer(); ?>

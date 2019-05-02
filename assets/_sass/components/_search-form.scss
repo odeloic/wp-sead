@@ -1,0 +1,45 @@
+.search__form {
+    input {
+        outline: none;
+    }
+
+    &__input {
+        border: 1px solid $primary-color--dark;
+        padding: .8rem;
+        font-family: inherit;
+        background-color: #fff;
+        margin-right: .5rem;
+        font-size: 1.2rem;
+        color: $gray-color--dark;
+        font-weight: 500;
+        width: 70%;
+        transition: all .2s ease;
+
+        &::placeholder {
+            color: $gray-color;
+        }
+
+        &:focus {
+            border-width: 3px;
+        }
+    }
+
+    &__submit {
+        border: none;
+        background-color: $secondary-color;
+        padding: .8rem;
+        color: $accent-color--primary;
+        font-family: $font-headings;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .2s ease;
+
+
+        &:hover {
+            background-color: $primary-color--dark;
+        }
+
+    }
+}

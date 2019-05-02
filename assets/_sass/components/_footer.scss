@@ -1,68 +1,76 @@
 .footer {
-	background-color: $primary-color--light;
-	width: 100%;
+    background-color: $primary-color--light;
+    width: 100%;
 
-	p {
-		font-size: 1.2rem;
-	}
+    p {
+        font-size: 1.2rem;
+    }
 
-	&__copyright {
-		background-color: $primary-color--dark;
-		color: #fff;
-		text-align: right;
+    &__copyright {
+        background-color: $primary-color--dark;
+        color: #fff;
+        text-align: right;
 
-		p {
-			font-family: $font-headings;
-			font-weight: 500;
-			font-size: 1rem;
+        p {
+            font-family: $font-headings;
+            font-weight: 500;
+            font-size: 1rem;
 
-		}
+        }
 
-		p strong {
+        p strong {
 
-			color: #fff;
-			font-weight: 600;
-		}
-	}
+            color: #fff;
+            font-weight: 600;
+        }
+    }
 
-	&__nav {
-		ul {
-			list-style: none;
+    &__nav {
+        ul {
+            list-style: none;
 
-			li {
-				display: block;
+            li {
+                display: block;
 
-				a {
-					font-family: $font-headings;
-					color: #fff;
-					font-size: 1.3rem;
-					color: $light-green;
-				}
+                a {
+                    font-family: $font-headings;
+                    color: #fff;
+                    font-size: 1.3rem;
+                    color: $light-green;
+                    transition: all .3s ease;
 
-				&:not(:last-child) {
-					margin-bottom: 2rem;
-				}
-			}
-		}
+                    &:hover {
+                        color: $accent-color--primary;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
 
 
-	}
+    }
 
-	&__heading {
-		margin-bottom: 3rem;
-		color: $light-blue;
-		font-size: 1.3rem;
-		text-transform: uppercase;
-		font-weight: 600;
-	}
+    &__heading {
+        margin-bottom: 3rem;
+        color: $light-blue;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
 
-	&__address {
-		text-align: right;
-	}
+    &__address {
 
-	.address p {
-		font-family: $font-headings;
-		color: $light-green;
-		margin-bottom: 1rem;
-	}
+        @include respond(small) {
+            text-align: left;
+        }
+    }
+
+    .address p {
+        font-family: $font-headings;
+        color: $light-green;
+        margin-bottom: 1rem;
+    }
 }
