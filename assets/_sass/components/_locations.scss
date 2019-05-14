@@ -1,144 +1,120 @@
 .locations-container {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .locations {
-    width: 40rem;
-    height: 40rem;
-    display: flex;
-    flex-wrap: wrap;
+	width: 40rem;
+	height: 40rem;
+	display: flex;
+	flex-wrap: wrap;
 
-    @include respond(small) {
-        width: 30rem;
-        height: 30rem;
-    }
+	@include respond(small) {
+		width: 30rem;
+		height: 30rem;
+	}
 
-    .location {
-        flex-basis: 50%;
-    }
+	.location {
+		flex-basis: 50%;
+	}
 }
 
 .location {
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: cover;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-    position: relative;
+	position: relative;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: $gray-color--dark;
-        width: 100%;
-        height: 100%;
-        opacity: .5;
-        z-index: 1;
-        transition: opacity .3s ease;
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $gray-color--dark;
+		width: 100%;
+		height: 100%;
+		opacity: .5;
+		z-index: 1;
+		transition: opacity .3s ease;
+	}
 
-    &:hover::after {
-        opacity: .8;
-    }
+	&:hover::after {
+		opacity: .8;
+	}
 
-    &__data {
-        display: none;
+	&__data {
+		display: none;
 
-    }
+	}
 
-    &__name {
-        position: absolute;
-        color: $accent-color--primary;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        z-index: 5;
-        transform: scale(1);
-        transition: transform .3s ease;
+	&__name {
+		position: absolute;
+		color: $accent-color--primary;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		z-index: 5;
+		transform: scale(1);
+		transition: transform .3s ease;
 
-        @include respond(small) {
-            font-size: 1.1rem;
-        }
-    }
+		@include respond(small) {
+			font-size: 1.1rem;
+		}
+	}
 
-    &:hover &__name {
-        transform: scale(1.2);
-    }
+	&:hover &__name {
+		transform: scale(1.2);
+	}
 
-    &--north-west {
-        background-color: orangered;
-        border-radius: 100% 0 0 0;
+	&--north-west {
+		background-color: orangered;
+		border-radius: 100% 0 0 0;
 
-        &::after {
-            border-radius: 100% 0 0 0;
-        }
+		&::after {
+			border-radius: 100% 0 0 0;
+		}
 
-        @include location-name-position(60%, 30%);
-    }
+		@include location-name-position(60%, 30%);
+	}
 
-    &--north-east {
-        background-color: yellowgreen;
-        border-radius: 0 100% 0 0;
+	&--north-east {
+		background-color: yellowgreen;
+		border-radius: 0 100% 0 0;
 
-        &::after {
-            border-radius: 0 100% 0 0
-        }
+		&::after {
+			border-radius: 0 100% 0 0
+		}
 
 
-        @include location-name-position(60%, 25%);
+		@include location-name-position(60%, 25%);
 
-    }
+	}
 
-    &--south-west {
-        background-color: goldenrod;
-        border-radius: 0 0 0 100%;
+	&--south-west {
+		background-color: goldenrod;
+		border-radius: 0 0 0 100%;
 
-        &::after {
-            border-radius: 0 0 0 100%;
-        }
+		&::after {
+			border-radius: 0 0 0 100%;
+		}
 
-        @include location-name-position(40%, 35%);
-    }
+		@include location-name-position(40%, 35%);
+	}
 
-    &--south-east {
-        background-color: violet;
-        border-radius: 0 0 100% 0;
+	&--south-east {
+		background-color: violet;
+		border-radius: 0 0 100% 0;
 
-        &::after {
-            border-radius: 0 0 100% 0;
-        }
+		&::after {
+			border-radius: 0 0 100% 0;
+		}
 
-        @include location-name-position(40%, 20%);
-    }
+		@include location-name-position(40%, 20%);
+	}
 }
 
 
 .details-placeholder {
-    padding: 4.5rem 3.5rem;
-    background-color: $light-blue;
-    text-align: center;
-    transition: all 1s ease;
-    margin-top: 5rem;
-    text-align: left;
-
-    @include respond(small) {
-        padding: 3rem;
-    }
-
-    h4 {
-        color: $gray-color--dark;
-        font-size: 1.3rem;
-        margin-bottom: 1.8rem;
-        text-transform: uppercase;
-    }
-
-    span {
-        color: $alternative-green;
-        font-family: $font-headings;
-        font-size: 1.3rem;
-        margin-bottom: 1.2rem;
-        display: inline-block;
-    }
-
+	text-align: center;
+	transition: all 1s ease;
 }

@@ -38,10 +38,6 @@
             <!-- column header__navigation -->
             <div class="column is-one-quarter header__search">
                 <div class="search">
-                    <!-- <form class="search__form">
-                        <input type="search" class="search__form__input" placeholder="Search 'something' on website...">
-                        <input type="submit" value="Search" class="search__form__submit">
-                    </form> -->
                     <?php get_search_form(); ?>
                 </div>
             </div>
@@ -63,9 +59,9 @@
         <nav class="mobile-navigation">
             <?php
             wp_nav_menu(array(
-                'menu' => 'header_menu',
-                'theme_location' => 'header_menu',
-                'menu_class' => 'mobile-navigation',
+                'menu' => 'header-menu',
+                'theme_location' => 'header-menu',
+                'container' => ''
             ));
             ?>
 

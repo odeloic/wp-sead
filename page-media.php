@@ -64,10 +64,8 @@ get_template_part('templates/page-header');
 
         <div class="columns is-multiline">
           <?php $args = array(
-            'order'    => 'desc',
-            'orderby'  => 'publish_date',
-            'posts_per_page' => '-1',
-            'cat' => '11'
+            'post_type'         => 'resource',
+            'posts_per_page'    => '-1',
           );
           $resources = new WP_Query($args);
 
@@ -75,8 +73,7 @@ get_template_part('templates/page-header');
               get_template_part('templates/tr-material');
             endwhile;
           endif;
-          wp_reset_postdata();
-          ?>
+          wp_reset_postdata(); ?>
         </div>
       </div>
     </div>
