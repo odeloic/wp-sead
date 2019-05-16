@@ -4,6 +4,13 @@ get_template_part('templates/page-header');
 ?>
 
 
+<section class="section section--padded pd-top--big pd-bottom--small">
+  <div class="container--tight">
+    <h2 class="heading--primary heading--green mg-top--big mg-bottom--big text--centered">Who we are</h2>
+    <p style="font-size: 1.8rem;"><?php the_field('about_intro'); ?></p>
+  </div>
+</section>
+
 
 <section class="section section--padded section-team pd-top--big pd-bottom--big">
   <div class="container--tight">
