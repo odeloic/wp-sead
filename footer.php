@@ -8,19 +8,19 @@
                 <h3 class="footer__heading">Stay Connected</h3>
                 <ul class="social-icons">
                     <li class="social-icons__icon">
-                        <a href="#" title="Twiiter">
+                        <a href="https://twitter.com/SEAD_Rwanda" title="Twiiter">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li><!-- icon -->
 
                     <li class="social-icons__icon">
-                        <a href="#" title="Facebook">
+                        <a href="https://www.facebook.com/SEADRwanda/" title="Facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li><!-- icon -->
 
                     <li class="social-icons__icon">
-                        <a href="#" title="Flickr">
+                        <a href="https://www.flickr.com/photos/138583696@N04/" title="Flickr">
                             <i class="fab fa-flickr"></i>
                         </a>
                     </li><!-- icon -->
