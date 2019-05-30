@@ -61,19 +61,96 @@ get_template_part('templates/page-header');
         </h2>
       </div>
       <div class="column">
+        <div class="columns">
 
-        <div class="columns is-multiline">
-          <?php $args = array(
-            'post_type'         => 'resource',
-            'posts_per_page'    => '-1',
-          );
-          $resources = new WP_Query($args);
+          <div class="column">
+            <h2 class="heading--tertiary mg-bottom--medium">Poultry</h2>
+            <?php $args = array(
+              'post_type'         => 'training_material',
+              'posts_per_page'    => '-1',
+              'tax_query'         => array(
+                array(
+                  'taxonomy'      => 'training_material_category',
+                  'field'         => 'slug',
+                  'terms'         => 'poultry'
+                )
+              )
+            );
+            $resources = new WP_Query($args);
 
-          if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
-              get_template_part('templates/tr-material');
-            endwhile;
-          endif;
-          wp_reset_postdata(); ?>
+            if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+                get_template_part('templates/tr-material');
+              endwhile;
+            endif;
+            wp_reset_postdata(); ?>
+          </div><!-- tr material category -->
+
+          <div class="column">
+            <h2 class="heading--tertiary mg-bottom--medium">Diary</h2>
+            <?php $args = array(
+              'post_type'         => 'training_material',
+              'posts_per_page'    => '-1',
+              'tax_query'         => array(
+                array(
+                  'taxonomy'      => 'training_material_category',
+                  'field'         => 'slug',
+                  'terms'         => 'diary'
+                )
+              )
+            );
+            $resources = new WP_Query($args);
+
+            if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+                get_template_part('templates/tr-material');
+              endwhile;
+            endif;
+            wp_reset_postdata(); ?>
+          </div><!-- tr material category -->
+
+          <div class="column">
+            <h2 class="heading--tertiary mg-bottom--medium">Potato</h2>
+            <?php $args = array(
+              'post_type'         => 'training_material',
+              'posts_per_page'    => '-1',
+              'tax_query'         => array(
+                array(
+                  'taxonomy'      => 'training_material_category',
+                  'field'         => 'slug',
+                  'terms'         => 'potato'
+                )
+              )
+            );
+            $resources = new WP_Query($args);
+
+            if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+                get_template_part('templates/tr-material');
+              endwhile;
+            endif;
+            wp_reset_postdata(); ?>
+          </div><!-- tr material category -->
+
+
+          <div class="column">
+            <h2 class="heading--tertiary mg-bottom--medium">Holticulture</h2>
+            <?php $args = array(
+              'post_type'         => 'training_material',
+              'posts_per_page'    => '-1',
+              'tax_query'         => array(
+                array(
+                  'taxonomy'      => 'training_material_category',
+                  'field'         => 'term_id',
+                  'terms'         => '15'
+                )
+              )
+            );
+            $resources = new WP_Query($args);
+
+            if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+                get_template_part('templates/tr-material');
+              endwhile;
+            endif;
+            wp_reset_postdata(); ?>
+          </div><!-- tr material category -->
         </div>
       </div>
     </div>
