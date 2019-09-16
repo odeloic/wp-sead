@@ -15,6 +15,11 @@
       <div class="columns is-multiline">
         <?php get_template_part('templates/loop');?>
       </div>
+      <div class="colums is-centered">
+        <div class="pagination">
+          <?php the_posts_pagination() ?>
+        </div>
+      </div>
   </div>
 </section
 

@@ -1,0 +1,23 @@
+.pagination {
+  nav.navigation  {}
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a,
+    span {
+      font-size: 1.6rem;
+      padding: 0 .5rem .1rem;
+      display: inline-block;
+      color: $primary-color--light;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: $font-headings;
+    }
+
+    .current {
+      color: $primary-color--dark;
+      border-bottom: 2px solid $primary-color--dark;
+    }
+  }
+}
