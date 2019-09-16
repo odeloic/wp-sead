@@ -46,9 +46,9 @@
             <div class=" column footer__column footer__address">
                 <h3 class="footer__heading">Where to find us</h3>
                 <div class="address">
-                    <p>Kigali, Rwanda</p>
-                    <p>Commercial Building, Lot. No 144</p>
-                    <p>+250 66889999</p>
+                    <p>RDB Building</p>
+                    <p>KG 220 Street, KIGALI Rwanda</p>
+                    <p>4th Floor</p>
                     <div class="social-icons">
                         <span class="social-icons__icon"></span>
                         <span class="social-icons__icon"></span>

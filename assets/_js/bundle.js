@@ -66,7 +66,7 @@ locations.forEach(function (element, index) {
 
     element.addEventListener("mouseout", function () {
         locationDataTarget.innerHTML =
-            "<p>Hover Over Province for more information</p>";
+            "<p>Hover over province for more information</p>";
         // locationDataTarget.innerHTML = '';
     });
 });

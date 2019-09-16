@@ -207,13 +207,10 @@ function sead_search_form($args)
 }
 
 
-function sead_exclude_posts($wp_query)
+function exclude_category_posts($query)
 {
-    $excluded = array('press');
-
-    if (is_home()) {
-        set_query_var('category__not_in', $excluded);
+    if ($query->is_home() && $query->is_main_query()) {
+        $query->set('cat', '-8,-9,-10');
     }
 }
-
-add_action('pre_get_posts', 'sead_exclude_posts');
+add_action('pre_get_posts', 'exclude_category_posts');

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="blog__meta">
       <div class="blog__details">
-        <span class="blog__author"><?php the_author(); ?></span>
+        <span class="blog__date">Published on <?php the_time('d M, Y'); ?></span>
       </div>
       <h2 class="blog__title"><?php the_title(); ?></h2>
       <?php if (get_post_thumbnail_id()) : ?>

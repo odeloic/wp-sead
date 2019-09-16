@@ -129,7 +129,6 @@ get_template_part('templates/page-header');
             wp_reset_postdata(); ?>
           </div><!-- tr material category -->
 
-
           <div class="column">
             <h2 class="heading--tertiary mg-bottom--medium">Holticulture</h2>
             <?php $args = array(
@@ -145,6 +144,27 @@ get_template_part('templates/page-header');
             );
             $resources = new WP_Query($args);
 
+            if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+                get_template_part('templates/tr-material');
+              endwhile;
+            endif;
+            wp_reset_postdata(); ?>
+          </div><!-- tr material category -->
+
+          <div class="column">
+            <h2 class="heading--tertiary mg-bottom--medium">Crosscutting</h2>
+            <?php $args = array(
+              'post_type'         => 'training_material',
+              'posts_per_page'    => '-1',
+              'tax_query'         => array(
+                array(
+                  'taxonomy'      => 'training_material_category',
+                  'field'         => 'term_id',
+                  'terms'         => '18'
+                )
+              )
+            );
+            $resources = new WP_Query($args);
             if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
                 get_template_part('templates/tr-material');
               endwhile;

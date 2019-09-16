@@ -47,7 +47,7 @@
                 <div class="slide__caption">
                     <h3 class="slide__title"><?php the_field('title_3'); ?></h3>
                     <p class="slide__description">
-                        <?php the_field('title_3'); ?>
+                        <?php the_field('description_3'); ?>
                     </p>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                         'order'    => 'desc',
                         'orderby'  => 'publish_date',
                         'posts_per_page' => '3',
-                        'cat' => '-7,-8'
+                        'cat' => '-8,-9,-10'
                     );
                     $latest = new WP_Query($args);
 

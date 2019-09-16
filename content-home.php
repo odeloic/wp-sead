@@ -1,4 +1,4 @@
-<div class="column is-multiline">
+<div class="column is-one-third">
   <div class="news-card" id="post-<?php the_id(); ?>">
     <?php if (get_post_thumbnail_id()) : ?>
       <a href="<?php the_permalink(); ?>" class="news-card__thumbnail-link">
