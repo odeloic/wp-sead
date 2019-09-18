@@ -86,7 +86,7 @@ get_template_part('templates/page-header');
           </div><!-- tr material category -->
 
           <div class="column">
-            <h2 class="heading--tertiary mg-bottom--medium">Diary</h2>
+            <h2 class="heading--tertiary mg-bottom--medium">Dairy</h2>
             <?php $args = array(
               'post_type'         => 'training_material',
               'posts_per_page'    => '-1',
@@ -130,7 +130,7 @@ get_template_part('templates/page-header');
           </div><!-- tr material category -->
 
           <div class="column">
-            <h2 class="heading--tertiary mg-bottom--medium">Holticulture</h2>
+            <h2 class="heading--tertiary mg-bottom--medium">Horticulture</h2>
             <?php $args = array(
               'post_type'         => 'training_material',
               'posts_per_page'    => '-1',
