@@ -131,7 +131,7 @@
                     'post_type'         => 'activity',
                     'meta_key'          => 'activity_time',
                     'orderby' => 'meta_value_num',
-                    'order'           => 'asc',
+                    'order'           => 'DESC',
                     'posts_per_page'    => '5',
                 );
 

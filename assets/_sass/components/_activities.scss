@@ -62,4 +62,23 @@
     &:not(:last-child) {
         margin-bottom: 5rem;
     }
+
+    &__period {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-start;
+
+        span {
+            font-style: italic;
+            font-size: 1.3rem;
+            opacity: .9;
+            &:not(:last-child) {
+                position: relative;
+                &::after {
+                    content: '-';
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
 }
