@@ -109,10 +109,10 @@
                 </h2>
                 <div class="columns">
                     <?php $args = array(
-                        'order'    => 'desc',
-                        'orderby'  => 'publish_date',
+                        'order' => 'desc',
+                        'orderby' => 'publish_date',
                         'posts_per_page' => '3',
-                        'cat' => '-8,-9,-10'
+                        'cat' => '-8,-9,-10',
                     );
                     $latest = new WP_Query($args);
 
@@ -128,11 +128,11 @@
             <div class="column activities">
                 <h3 class="heading--secondary heading--light mg-bottom--medium mg-top--big">Latest activities</h3>
                 <?php $args = array(
-                    'post_type'         => 'activity',
-                    'meta_key'          => 'activity_time',
+                    'post_type' => 'activity',
+                    'meta_key' => 'activity_time',
                     'orderby' => 'meta_value_num',
-                    'order'           => 'DESC',
-                    'posts_per_page'    => '5',
+                    'order' => 'DESC',
+                    'posts_per_page' => '5',
                 );
 
                 $activities = new WP_Query($args);
@@ -166,7 +166,7 @@
                             'meta_key' => 'partner_order',
                             'orderby' => 'meta_value_num',
                             'order' => 'ASC',
-                            'posts_per_page' => -1
+                            'posts_per_page' => -1,
                         );
                         $loop = new WP_Query($args);
                         ?>
@@ -180,7 +180,6 @@
                             </a>
                         <?php endwhile; ?>
                         <?php ?>
-
                     </div><!-- /partners-->
                 </div>
             </div>

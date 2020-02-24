@@ -2,10 +2,6 @@
 get_header();
 get_template_part('templates/page-header');
 ?>
-
-
-
-
 <section class="section--padded pd-top--big pd-bottom--big">
   <div class="container">
     <h2 class="heading--primary heading--green mg-bottom--big">Where we work</h2>
