@@ -5,53 +5,7 @@ get_template_part('templates/page-header');
 
 <!-- content -->
 
-<section class="section pd-top--big pd-bottom--big bg-light-blue">
-  <div class="container">
-    <h2 class="heading--secondary heading--green mg-bottom--medium">
-      Newsletter
-    </h2>
-    <div class="columns is-multiline">
-      <?php $args = array(
-        'order'    => 'desc',
-        'orderby'  => 'publish_date',
-        'posts_per_page' => '-1',
-        'cat' => '10'
-      );
-      $resources = new WP_Query($args);
-
-      if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
-          get_template_part('templates/newsletter');
-        endwhile;
-      endif;
-      wp_reset_postdata();
-      ?>
-    </div>
-  </div>
-</section>
-<!-- newsletter -->
-<section class="section--padded pd-top--big pd-bottom--big">
-  <div class="container">
-    <h2 class="heading--secondary heading--green mg-bottom--big">Gallery</h2>
-    <div class="columns is-multiline">
-      <?php $args = array(
-        'order'    => 'desc',
-        'orderby'  => 'publish_date',
-        'posts_per_page' => '-1',
-        'cat' => '8'
-      );
-      $resources = new WP_Query($args);
-
-      if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
-          get_template_part('templates/resource');
-        endwhile;
-      endif;
-      wp_reset_postdata();
-      ?>
-    </div>
-  </div>
-</section>
-<!-- gallery -->
-
+<!-- training materials -->
 <section class="section training-materials bg-gray pd-top--big pd-bottom--big">
   <div class="container">
     <div class="columns">
@@ -176,6 +130,7 @@ get_template_part('templates/page-header');
     </div>
   </div>
 </section>
+<!-- E-course -->
 <section class="section--padded pd-top--big pd-bottom--big">
   <div class="container">
     <h2 class="heading--secondary heading--green mg-bottom--big">E-Courses</h2>
@@ -197,5 +152,52 @@ get_template_part('templates/page-header');
     </div>
   </div>
 </section>
+<!-- NewsLetter -->
+<section class="section pd-top--big pd-bottom--big bg-light-blue">
+  <div class="container">
+    <h2 class="heading--secondary heading--green mg-bottom--medium">
+      Newsletter
+    </h2>
+    <div class="columns is-multiline">
+      <?php $args = array(
+        'order'    => 'desc',
+        'orderby'  => 'publish_date',
+        'posts_per_page' => '-1',
+        'cat' => '10'
+      );
+      $resources = new WP_Query($args);
+
+      if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+          get_template_part('templates/newsletter');
+        endwhile;
+      endif;
+      wp_reset_postdata();
+      ?>
+    </div>
+  </div>
+</section>
+<!-- newsletter -->
+<section class="section--padded pd-top--big pd-bottom--big">
+  <div class="container">
+    <h2 class="heading--secondary heading--green mg-bottom--big">Gallery</h2>
+    <div class="columns is-multiline">
+      <?php $args = array(
+        'order'    => 'desc',
+        'orderby'  => 'publish_date',
+        'posts_per_page' => '-1',
+        'cat' => '8'
+      );
+      $resources = new WP_Query($args);
+
+      if ($resources->have_posts()) : while ($resources->have_posts()) : $resources->the_post();
+          get_template_part('templates/resource');
+        endwhile;
+      endif;
+      wp_reset_postdata();
+      ?>
+    </div>
+  </div>
+</section>
+<!-- gallery -->
 <!-- gallery -->
 <?php get_footer(); ?>
