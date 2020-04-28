@@ -222,3 +222,6 @@ sead doesn't load the default theme stylesheet "style.css" by default.
 ## Copyright / License
 
 &copy; 2015 the contributors of the sead project under the [GPL version 2.0](https://raw.githubusercontent.com/wp-sead/sead/master/LICENSE) or later.
+
+
+`Ta Daaaaa`
