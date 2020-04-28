@@ -1,9 +1,9 @@
 <div class="activity">
   <div class="activity__date">
-    <?php if (get_field('activity_start_date') && get_field('activity_end_date')) : ?>
+    <?php if (get_field('acitvity_start_date') && get_field('acitvity_end_date')) : ?>
       <?php
-      $startDate = new DateTime(get_field('activity_start_date', false, false));
-      $endDate = new DateTime(get_field('activity_end_date', false, false));
+      $startDate = new DateTime(get_field('acitvity_start_date', false, false));
+      $endDate = new DateTime(get_field('acitvity_end_date', false, false));
       ?>
       <p><span><?php echo $startDate->format('d') . '/' . $startDate->format('m'); ?></span> <span class="separator">-</span> <?php echo $endDate->format('d') . '/' . $endDate->format('m'); ?></span></p>
     <?php else :
