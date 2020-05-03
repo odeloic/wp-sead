@@ -24,16 +24,18 @@
             <!-- column header logo -->
 
             <div class="column header__navigation">
-                <?php
-                wp_nav_menu(array(
-                    'menu' => 'header-menu',
-                    'theme_location' => 'header-menu',
-                    'menu_class' => 'navigation',
-                    'container' => 'nav',
-                    'container_class' => 'navigation',
-                ));
-                ?>
-                <!-- navigation -->
+                <ul class="navigation">
+                    <?php
+                    wp_nav_menu(array(
+                        'menu' => 'header-menu',
+                        'theme_location' => 'header-menu',
+                        'menu_class' => 'navigation__list',
+                        'container' => false,
+                        'walker' => new Menu_Walker()
+                    ));
+                    ?>
+                    <!-- navigation -->
+                </ul>
             </div>
             <!-- column header__navigation -->
             <div class="column is-one-quarter header__search">
@@ -61,7 +63,9 @@
             wp_nav_menu(array(
                 'menu' => 'header-menu',
                 'theme_location' => 'header-menu',
-                'container' => ''
+                'menu_class' => 'navigation__list',
+                'container' => false,
+                'walker' => new Menu_Walker()
             ));
             ?>
 

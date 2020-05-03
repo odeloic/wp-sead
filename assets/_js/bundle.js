@@ -80,11 +80,33 @@ locations.forEach(function (element, index) {
 
 
 /* menu */
-
 const menuIcon = document.querySelector('.menu-icon');
 const mobileNavigation = document.querySelector('.mobile-navigation');
+const submenu = document.querySelector('.mobile-navigation li.has-sub-menu a');
+function closeSubMenu() {
+    // eslint-disable-next-line max-len
+    const openEl = document.querySelector('.mobile-navigation ul.navigation__sub-menu.expanded');
+    // close all expanded menus
+    if (openEl) {
+        openEl.classList.remove('expanded');
+    }
+}
+if (menuIcon) {
+    menuIcon.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeSubMenu();
+        this.classList.toggle('mobile-menu-open');
+        mobileNavigation.classList.toggle('mobile-menu-open');
+    });
+}
 
-menuIcon.addEventListener('click', function (e) {
-    this.classList.toggle('mobile-menu-open');
-    mobileNavigation.classList.toggle('mobile-menu-open');
-});
+if (submenu) {
+    submenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        // expand this el
+        const {target: {nextElementSibling: {classList}}} = e;
+        classList.toggle('expanded');
+        e.stopPropagation();
+    });
+}
+

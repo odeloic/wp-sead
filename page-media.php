@@ -6,7 +6,7 @@ get_template_part('templates/page-header');
 <!-- content -->
 
 <!-- training materials -->
-<section class="section training-materials bg-gray pd-top--big pd-bottom--big">
+<section class="section training-materials bg-gray pd-top--big pd-bottom--big" id="training-materials">
   <div class="container">
     <div class="columns">
       <div class="column is-one-quarter">
@@ -131,7 +131,7 @@ get_template_part('templates/page-header');
   </div>
 </section>
 <!-- E-course -->
-<section class="section--padded pd-top--big pd-bottom--big">
+<section class="section--padded pd-top--big pd-bottom--big" id="e-courses">
   <div class="container">
     <h2 class="heading--secondary heading--green mg-bottom--big">E-Courses</h2>
     <div class="columns is-multiline">
@@ -153,7 +153,7 @@ get_template_part('templates/page-header');
   </div>
 </section>
 <!-- NewsLetter -->
-<section class="section pd-top--big pd-bottom--big bg-light-blue">
+<section class="section pd-top--big pd-bottom--big bg-light-blue" id="newsletter">
   <div class="container">
     <h2 class="heading--secondary heading--green mg-bottom--medium">
       Newsletter
@@ -176,8 +176,8 @@ get_template_part('templates/page-header');
     </div>
   </div>
 </section>
-<!-- newsletter -->
-<section class="section--padded pd-top--big pd-bottom--big">
+<!-- Gallery -->
+<section class="section--padded pd-top--big pd-bottom--big" id="gallery">
   <div class="container">
     <h2 class="heading--secondary heading--green mg-bottom--big">Gallery</h2>
     <div class="columns is-multiline">
@@ -198,6 +198,4 @@ get_template_part('templates/page-header');
     </div>
   </div>
 </section>
-<!-- gallery -->
-<!-- gallery -->
 <?php get_footer(); ?>
