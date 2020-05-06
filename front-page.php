@@ -13,7 +13,7 @@
                 $id_image = get_field('image_1');
                 $image = wp_get_attachment_image_src($id_image, 'slides');
                 ?>
-                <img src="<?php echo $image[0]; ?>" alt="" class="slide__img">
+                <img src="<?php echo $image[0]; ?>" alt="<?php the_field('title_1'); ?>" class="slide__img">
                 <div class="slide__caption">
                     <h3 class="slide__title"><?php the_field('title_1'); ?></h3>
                     <p class="slide__description">
@@ -28,7 +28,7 @@
                 $id_image = get_field('image_2');
                 $image = wp_get_attachment_image_src($id_image, 'slides');
                 ?>
-                <img src="<?php echo $image[0]; ?>" alt="" class="slide__img">
+                <img src="<?php echo $image[0]; ?>" alt="<?php the_field('title_2'); ?>" class="slide__img">
                 <div class="slide__caption">
                     <h3 class="slide__title"><?php the_field('title_2'); ?></h3>
                     <p class="slide__description">
@@ -43,7 +43,7 @@
                 $id_image = get_field('image_3');
                 $image = wp_get_attachment_image_src($id_image, 'slides');
                 ?>
-                <img src="<?php echo $image[0]; ?>" alt="" class="slide__img">
+                <img src="<?php echo $image[0]; ?>" alt="<?php the_field('title_3'); ?>" class="slide__img">
                 <div class="slide__caption">
                     <h3 class="slide__title"><?php the_field('title_3'); ?></h3>
                     <p class="slide__description">
@@ -85,7 +85,7 @@
                         $video_thumbnail_id = get_field('hero_intro_video_thumbnail');
                         $video_thumbnail = wp_get_attachment_image_src($video_thumbnail_id, 'full');
                         ?>
-                        <img src="<?php echo $video_thumbnail[0]; ?>" alt="Video Thumbnail" class="video__thumbnail">
+                        <img src="<?php echo $video_thumbnail[0]; ?>" alt="Video Thumbnail - <?php the_field('hero_intro_title'); ?>" class="video__thumbnail">
 
                         <a href="<?php the_field('hero_intro_video'); ?>" class="iframe-lightbox-link video__play" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">
                             <span class="video__play__icon">

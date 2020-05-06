@@ -6,7 +6,7 @@
       </div>
       <h2 class="blog__title"><?php the_title(); ?></h2>
       <?php if (get_post_thumbnail_id()) : ?>
-        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="Blog Featured Image" class="blog__featured-img">
+        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="Blog Featured Image - <?php the_title(); ?>" class="blog__featured-img">
       <?php endif; ?>
     </div>
     <div class="blog-content">

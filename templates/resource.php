@@ -5,7 +5,7 @@
         $resource_featured_img_id = get_post_thumbnail_id();
         $resource_thumbnail = wp_get_attachment_image_src($resource_featured_img_id, 'full');
         ?>
-        <img src="<?php echo $resource_thumbnail[0]; ?>" alt="Resource Thumbnail Title" class="sd-resource__thumbnail">
+        <img src="<?php echo $resource_thumbnail[0]; ?>" alt="Resource Thumbnail Title - <?php the_title(); ?>" class="sd-resource__thumbnail">
 
         <div class="sd-resource__meta">
 
