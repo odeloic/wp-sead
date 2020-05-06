@@ -23,11 +23,11 @@
                 margin-bottom: 3rem;
             }
 
-            a {
-                font-family: $font-headings;
-                text-transform: uppercase;
-                font-size: 1.8rem;
-            }
+        }
+        a {
+            font-family: $font-headings;
+            text-transform: uppercase;
+            font-size: 1.8rem;
         }
     }
 
@@ -72,8 +72,8 @@
         margin-bottom: 1.5rem;
     }
 
-    &__elt  a {
-        font-size: 1.2rem !important;
+    a {
+        font-size: 1.1rem !important;
     }
 
     &.expanded {
