@@ -65,7 +65,10 @@ ul.navigation__sub-menu {
     z-index: 55;
     background-color: #ffffff;
     padding: 2rem 1.5rem;
-    li:not(:last-child) {
+    & > li.navigation__elt {
+     margin-right: 0rem !important;
+    }
+    & > li:not(:last-child) {
       margin-bottom: 3rem;
     }
     a {
