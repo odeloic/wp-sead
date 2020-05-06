@@ -4,7 +4,7 @@ get_template_part('templates/page-header');
 ?>
 
 
-<section class="section section--padded pd-top--big pd-bottom--small">
+<section class="section section--padded pd-top--big pd-bottom--small" id="who-we-are">
   <div class="container--tight">
     <h2 class="heading--primary heading--green mg-top--big mg-bottom--big text--centered">Who we are</h2>
     <p style="font-size: 1.8rem;"><?php the_field('about_intro'); ?></p>
@@ -12,7 +12,7 @@ get_template_part('templates/page-header');
 </section>
 
 
-<section class="section section--padded section-team pd-top--big pd-bottom--big">
+<section class="section section--padded section-team pd-top--big pd-bottom--big" id="team">
   <div class="container--tight">
     <div class="text--centered">
       <h2 class="heading--primary heading--green mg-bottom--medium">Team</h2>
@@ -51,7 +51,7 @@ get_template_part('templates/page-header');
 
 
 <!-- section -intro -video -->
-<section class="section section--padded section--blue pd-top--big pd-bottom--big">
+<section class="section section--padded section--blue pd-top--big pd-bottom--big" id="core-partners">
   <div class="container">
     <div class="columns">
       <div class="column">

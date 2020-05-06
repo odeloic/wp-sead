@@ -23,7 +23,7 @@ endif;
 wp_reset_postdata();
 ?>
 
-<section class="section--padded pd-top--big pd-bottom--big">
+<section class="section--padded pd-top--big pd-bottom--big" id="sead-locations">
   <div class="container">
     <h2 class="heading--primary heading--green mg-bottom--big">Where we work</h2>
     <div class="columns">
