@@ -281,3 +281,4 @@ function exclude_category_posts($query)
     }
 }
 add_action('pre_get_posts', 'exclude_category_posts');
+add_post_type_support('page', 'excerpt');
