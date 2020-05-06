@@ -99,7 +99,6 @@ if (menuIcon) {
         mobileNavigation.classList.toggle('mobile-menu-open');
     });
 }
-
 if (submenu) {
     submenu.addEventListener('click', function(e) {
         e.preventDefault();
