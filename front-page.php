@@ -143,15 +143,35 @@
                 endif;
                 wp_reset_postdata(); ?>
 
-
-
-
             </div><!-- /activities -->
         </div>
     </section>
 
     <!-- Partners -->
+    <section class="section section--padded section--padded pd-top--big pd-bottom--big bg-gray">
+        <div class="container">
+            <h2 class="heading--primary heading--green mg-bottom--medium">Testimonials</h2>
+            <div class="testimonials swiper-container">
+                <div class="testimonials__slider swiper-wrapper">
+                    <?php $args = array(
+                        'post_type' => 'testimonial',
+                        'posts_per_page' => '5',
+                    );
 
+                    $testimonials = new WP_Query($args);
+
+                    if ($testimonials->have_posts()) : while ($testimonials->have_posts()) : $testimonials->the_post();
+                            get_template_part('templates/testimonials');
+                        endwhile;
+                    endif;
+                    wp_reset_postdata(); ?>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section>
     <section class="section section--padded section--padded pd-top--big pd-bottom--big">
         <div class="container">
             <div class="columns">

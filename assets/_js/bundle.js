@@ -1,32 +1,25 @@
+/* eslint-disable max-len */
 import Swiper from "swiper";
 import lightbox from "iframe-lightbox";
 var mySwiper = new Swiper(".slider", {
     // Optional parameters
     direction: "horizontal",
     loop: true,
-
+    slidesPerView: 1,
+    spaceBetween: 0,
     // If we need pagination
     pagination: {
         el: ".swiper-pagination"
     },
-
     // Navigation arrows
     navigation: {
         nextEl: ".slider-control-button--next",
         prevEl: ".slider-control-button--prev"
     },
-
     effect: "coverflow",
     autoplay: {
         delay: 5000
     }
-
-    // on: {
-    //     slideChange: function () {
-    //         /* do something */
-    //         console.log(this.slideActiveClass);
-    //     },
-    // }
 });
 
 var activitiesSwiper = new Swiper(".activities-slider", {
@@ -36,38 +29,56 @@ var activitiesSwiper = new Swiper(".activities-slider", {
         el: ".swiper-pagination",
         clickable: true
     },
+    breakpoints: {
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+        }
+    },
     navigation: {
         nextEl: ".slider-control-button--next",
         prevEl: ".slider-control-button--prev"
+    }
+});
+
+
+var testimonialsSlider = new Swiper(".testimonials", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
     },
     breakpoints: {
         768: {
-          slidesPerView: 1,
-          spaceBetween: 30,
+            slidesPerView: 1,
+            spaceBetween: 30,
         }
-      }
+    },
+    navigation: {
+        nextEl: ".slider-control-button--next",
+        prevEl: ".slider-control-button--prev"
+    }
 });
-
 /* locations hover */
 
 let locations = document.querySelectorAll(".location"),
     locationDataClass = ".location__data",
     locationDataTarget = document.querySelector(".details-placeholder");
-// location.addEventListener('mouseover', function () {
-//     console.log('Oh okay!');
-// })
 
 locations.forEach(function (element, index) {
     let locationData = element.querySelector(locationDataClass);
     element.addEventListener("mouseover", function () {
         locationDataTarget.innerHTML = locationData.innerHTML;
-        // locationDataTarget.innerHTML = '';
     });
 
     element.addEventListener("mouseout", function () {
         locationDataTarget.innerHTML =
-            "<p>Hover over province for more information</p>";
-        // locationDataTarget.innerHTML = '';
+            "<p>Hover Over Province for more information</p>";
     });
 });
 
@@ -83,8 +94,8 @@ locations.forEach(function (element, index) {
 const menuIcon = document.querySelector('.menu-icon');
 const mobileNavigation = document.querySelector('.mobile-navigation');
 const submenu = document.querySelector('.mobile-navigation li.has-sub-menu a');
+
 function closeSubMenu() {
-    // eslint-disable-next-line max-len
     const openEl = document.querySelector('.mobile-navigation ul.navigation__sub-menu.expanded');
     // close all expanded menus
     if (openEl) {
@@ -99,6 +110,7 @@ if (menuIcon) {
         mobileNavigation.classList.toggle('mobile-menu-open');
     });
 }
+
 if (submenu) {
     submenu.addEventListener('click', function(e) {
         e.preventDefault();
@@ -109,3 +121,23 @@ if (submenu) {
     });
 }
 
+// activities
+const activityTitles = document.querySelectorAll("a.activity__title");
+const expandActivity = (e) => {
+    e.preventDefault();
+    const {
+        target: {
+            parentElement: {
+                children,
+                nextElementSibling
+            }
+        }
+    } = e;
+    const [title, spanEl] = children;
+    spanEl.classList.toggle('active');
+    nextElementSibling.classList.toggle('active');
+    spanEl.innerHTML = nextElementSibling.classList.contains('active')
+    ? "Hide Details"
+    : "More Details";
+};
+activityTitles.forEach((item) => item.addEventListener('click', expandActivity));
