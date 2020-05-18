@@ -44,10 +44,16 @@
         max-height: 0rem;
         transition: all .3s ease;
         padding: 0rem;
+        p {
+            max-height: 0rem;
+        }
         &.active {
             padding: 2rem 0;
             opacity: 1;
             max-height: 100%;
+            p {
+                max-height: 100%;
+            }
         }
     }
     &__meta p {

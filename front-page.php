@@ -107,11 +107,11 @@
                 <h2 class="heading--primary heading--blue mg-bottom--medium mg-top--big">
                     Latest News
                 </h2>
-                <div class="columns">
+                <div class="columns is-multiline">
                     <?php $args = array(
                         'order' => 'desc',
                         'orderby' => 'publish_date',
-                        'posts_per_page' => '3',
+                        'posts_per_page' => '6',
                         'cat' => '-8,-9,-10',
                     );
                     $latest = new WP_Query($args);
