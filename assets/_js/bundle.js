@@ -47,7 +47,7 @@ var testimonialsSlider = new Swiper(".testimonials", {
     spaceBetween: 30,
     loop: true,
     autoplay: {
-        delay: 10000,
+        delay: 15000,
     },
     pagination: {
         el: ".swiper-pagination",
