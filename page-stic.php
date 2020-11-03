@@ -11,7 +11,7 @@ get_template_part('templates/page-header');
     );
     $procurements = new WP_Query($args);
     if ($procurements->have_posts()) : ?>
-      <p class="mg-bottom--small">If you are interested in participating in any of our live procurements please email <a href="mailto:Procurement@SEAD.rw" class="link link--goto">Procurement@SEAD.rw</a> mentioning the Procurment Number in the heading to receive the relevant tender pack</p>
+      <p class="mg-bottom--small">If you are interested in participating in any of our live procurements please email <a href="mailto:sticprocurement@sead.rw" class="link link--goto">sticprocurement@sead.rw</a> mentioning the Procurment Number in the heading to receive the relevant tender pack</p>
       <table class="table is-bordered is-hoverable is-fullwidth">
         <thead>
           <tr>
